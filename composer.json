@@ -1,0 +1,21 @@
+{
+    "name": "julian-b90/yii2-seo",
+    "description": "To optimized the Page",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","seo","seo manager"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julian Böhnke",
+            "email": "tr@julianb.de"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "seomanger\\": ""
+        }
+    }
+}
