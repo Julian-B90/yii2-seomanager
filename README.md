@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist julian-b90/yii2-seo "*"
+php composer.phar require --prefer-dist julian-b90/yii2-seomanager "*"
 ```
 
 or add
 
 ```
-"julian-b90/yii2-seo": "*"
+"julian-b90/yii2-seomanager": "*"
 ```
 
 to the require section of your `composer.json` file.
