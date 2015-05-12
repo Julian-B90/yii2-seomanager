@@ -4,6 +4,7 @@
     "type": "yii2-extension",
     "keywords": ["yii2","extension","seo","seo manager", "yii2-seomanager"],
     "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Julian Böhnke",
