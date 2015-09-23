@@ -1,10 +1,11 @@
 {
     "name": "julian-b90/yii2-seomanager",
     "description": "To optimized the Page",
+    "homepage": "http://www.yiiframework.com/",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","seo","seo manager", "yii2-seomanager"],
-    "minimum-stability": "stable",
     "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Julian Böhnke",
