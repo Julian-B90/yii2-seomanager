@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/../sparnator/runtime/tmp-extensions/yii2-seomanager/AutoloadExample.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../sparnator/runtime/tmp-extensions/yii2-seomanager/Module.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../sparnator/runtime/tmp-extensions/yii2-seomanager/migrations/m151210_135246_seomanager.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../sparnator/runtime/tmp-extensions/yii2-seomanager/models/Seomanager.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../sparnator/runtime/tmp-extensions/yii2-seomanager/models/search/SeomanagerSearch.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../sparnator/vendor/julian-b90/yii2-seomanager/migrations/m151210_135246_seomanager.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../sparnator/vendor/julian-b90/yii2-seomanager/models/search/SeomanagerSearch.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../sparnator/vendor/julian-b90/yii2-seomanager/views/seomanager/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/assets/SeomanagerAsset.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/component/Controller.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/component/SeomanagerHelper.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/controllers/SeomanagerController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/models/Seomanager.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/seomanager/_form.php" charset="UTF-8" />
   </component>
 </project>

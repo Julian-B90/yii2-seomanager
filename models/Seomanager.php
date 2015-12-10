@@ -5,7 +5,7 @@ namespace julianb90\seomanager\models;
 use Yii;
 
 /**
- * This is the model class for table "seo".
+ * This is the model class for table "seomanager".
  *
  * @property integer $id
  * @property string $route
@@ -23,7 +23,7 @@ class Seomanager extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'seomanager';
+        return 'Seomanager';
     }
 
     /**
@@ -33,6 +33,7 @@ class Seomanager extends \yii\db\ActiveRecord
     {
         return [
             [['updated', 'created'], 'integer'],
+            [['created'], 'required'],
             [['route', 'title', 'description', 'canonical', 'data'], 'string', 'max' => 255]
         ];
     }
@@ -44,7 +45,7 @@ class Seomanager extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'route' => 'Route',
+            'route' => 'Route/Url',
             'title' => 'Title',
             'description' => 'Description',
             'canonical' => 'Canonical',

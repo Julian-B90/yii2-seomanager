@@ -5,7 +5,7 @@ namespace julianb90\seomanager\models\search;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use julianb90\seomanager\models\Seomanger;
+use julianb90\seomanager\models\Seomanager;
 
 /**
  * SeoSearch represents the model behind the search form about `app\models\Seo`.
@@ -41,7 +41,7 @@ class SeomanagerSearch extends Seomanager
      */
     public function search($params)
     {
-        $query = Seo::find();
+        $query = Seomanager::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

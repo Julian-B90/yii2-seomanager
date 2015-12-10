@@ -7,13 +7,12 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\orbitstation\models\search\SeoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Seos';
+$this->title = 'Übersicht';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="seo-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Seo', ['create'], ['class' => 'btn btn-success']) ?>
@@ -24,16 +23,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'route',
             'title',
             'description',
             'canonical',
-            // 'data',
-            // 'updated',
-            // 'created',
-
+            'created:datetime',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

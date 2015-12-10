@@ -7,12 +7,13 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use julianb90\seomanager\assets\SeomanagerAsset;
 
 /**
  * @var \yii\web\View $this
  * @var string $content
  */
-TranslateManagerAsset::register($this);
+SeomanagerAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -36,15 +37,10 @@ TranslateManagerAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => Yii::t('seomanager-nav', 'Home'), 'url' => ['/']],
-                ['label' => Yii::t('seomanager-nav', 'Manager'), 'items' => [
-                        ['label' => Yii::t('seomanager-nav', 'List'), 'url' => ['/seomanager/language/list']],
-                        ['label' => Yii::t('seomanager-nav', 'Create'), 'url' => ['/seomanager/language/create']],
-                    ]
-                ],
+                ['label' => Yii::t('seomanager-nav', 'Admin'), 'url' => ['/seomanager/seomanager/index']],
             ];
             echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
+                'options' => ['class' => 'navbar-nav'],
                 'items' => $menuItems,
             ]);
             NavBar::end();

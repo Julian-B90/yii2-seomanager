@@ -10,22 +10,43 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist julianb90/yii2-seomanager "*"
+php composer.phar require --prefer-dist julian-b90/yii2-seomanager "*"
 ```
 
 or add
 
 ```
-"julianb90/yii2-seomanager": "*"
+"julian-b90/yii2-seomanager": "*"
 ```
 
 to the require section of your `composer.json` file.
+
+###Migration
+
+
+Run the following command in Terminal for database migration:
+
+Linux/Unix:
+```
+yii migrate/up --migrationPath=@vendor/julian-b90/yii2-seomanager/migrations
+```
+
+Windows:
+```
+yii.bat migrate/up --migrationPath=@vendor/julian-b90/yii2-seomanager/migrations
+```
 
 
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
-
+Ad to modules 
 ```php
-<?= \julianb90\listview\AutoloadExample::widget(); ?>```
+    'modules' => [
+        'seomanager' => [
+            'class' => 'julianb90\seomanager\Module',
+        ],
+    ]
+```
+
+for example http://localhost.local/seomanager/seomanager/index.html
