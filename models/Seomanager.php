@@ -10,6 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $route
  * @property string $title
+ * @property string $keywords
  * @property string $description
  * @property string $canonical
  * @property string $data
@@ -34,7 +35,7 @@ class Seomanager extends \yii\db\ActiveRecord
         return [
             [['updated', 'created'], 'integer'],
             [['created'], 'required'],
-            [['route', 'title', 'description', 'canonical', 'data'], 'string', 'max' => 255]
+            [['route', 'title', 'keywords', 'description', 'canonical', 'data'], 'string', 'max' => 255]
         ];
     }
 
@@ -47,6 +48,7 @@ class Seomanager extends \yii\db\ActiveRecord
             'id' => 'ID',
             'route' => 'Route/Url',
             'title' => 'Title',
+            'keywords' => 'Keywords',
             'description' => 'Description',
             'canonical' => 'Canonical',
             'data' => 'Data',
