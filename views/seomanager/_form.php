@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'keywords')->textInput(['maxlength' => true, 'placeholder' => 'Comma separated']) ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
