@@ -24,6 +24,10 @@ class SeomanagerHelper
                 $this->_setTitle($this->seoPage->title);
             }
 
+            if(!empty($this->seoPage->keywords)) {
+                $this->_setKeyWords($this->seoPage->keywords);
+            }
+
             if(!empty($this->seoPage->description)) {
                 $this->_setDescription($this->seoPage->description);
             }
@@ -60,5 +64,10 @@ class SeomanagerHelper
     private function _setCanonical($href)
     {
         $this->view->registerLinkTag(['rel' => 'canonical', 'href' => $href]);
+    }
+
+    private function _setKeyWords($keywords)
+    {
+        Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $keywords], 'keywords');
     }
 }
