@@ -1,10 +1,13 @@
 {
-    "name": "julian-b90/yii2-seomanager",
-    "description": "To optimized the Page",
+    "name": "julianb90/yii2-seomanager",
+    "description": "Seo Manager for every Site",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","seo","seo manager", "yii2-seomanager"],
+    "keywords": ["yii2","extension","seo","seomanager"],
     "license": "MIT",
-    "minimum-stability": "stable",
+    "support": {
+        "issues": "https://github.com/Julian-B90/yii2-seomanager/issues?state=open",
+        "source": "https://github.com/Julian-B90/yii2-seomanager"
+    },
     "authors": [
         {
             "name": "Julian Böhnke",
@@ -16,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "seomanger\\": ""
+            "julianb90\\seomanager\\": ""
         }
     }
 }

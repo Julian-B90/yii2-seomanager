@@ -1,6 +1,6 @@
 Seo Manager
 ===========
-To optimized the Page
+Seo Manager for every Site
 
 Installation
 ------------
@@ -21,11 +21,32 @@ or add
 
 to the require section of your `composer.json` file.
 
+###Migration
+
+
+Run the following command in Terminal for database migration:
+
+Linux/Unix:
+```
+yii migrate/up --migrationPath=@vendor/julian-b90/yii2-seomanager/migrations
+```
+
+Windows:
+```
+yii.bat migrate/up --migrationPath=@vendor/julian-b90/yii2-seomanager/migrations
+```
+
 
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
-
+Ad to modules 
 ```php
-<?= \seomanger\AutoloadExample::widget(); ?>```
+    'modules' => [
+        'seomanager' => [
+            'class' => 'julianb90\seomanager\Module',
+        ],
+    ]
+```
+
+for example http://localhost.local/seomanager/seomanager/index.html
