@@ -13,6 +13,7 @@ class m151210_135246_seomanager extends Migration
             'id' => $this->primaryKey(),
             'route' => $this->string(),
             'title' => $this->string(),
+            'keywords' => $this->string(),
             'description' => $this->string(),
             'canonical' => $this->string(),
             'data' => $this->string(),

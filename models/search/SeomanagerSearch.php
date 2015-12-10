@@ -19,7 +19,7 @@ class SeomanagerSearch extends Seomanager
     {
         return [
             [['id', 'updated', 'created'], 'integer'],
-            [['route', 'title', 'description', 'canonical', 'data'], 'safe'],
+            [['route', 'title', 'keywords', 'description', 'canonical', 'data'], 'safe'],
         ];
     }
 
@@ -63,6 +63,7 @@ class SeomanagerSearch extends Seomanager
 
         $query->andFilterWhere(['like', 'route', $this->route])
             ->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'keywords', $this->keywords])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'canonical', $this->canonical])
             ->andFilterWhere(['like', 'data', $this->data]);
