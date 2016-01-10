@@ -63,7 +63,7 @@ class SeomanagerHelper
 
     private function _setCanonical($href)
     {
-        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => $href]);
+        Yii::$app->view->registerLinkTag(['rel' => 'canonical', 'href' => $href]);
     }
 
     private function _setKeyWords($keywords)
