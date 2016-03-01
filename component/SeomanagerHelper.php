@@ -35,7 +35,6 @@ class SeomanagerHelper
             if(!empty($this->seoPage->canonical)) {
                 $this->_setCanonical($this->seoPage->canonical);
             }
-
         }
     }
 
@@ -43,11 +42,35 @@ class SeomanagerHelper
     {
         $route = Yii::$app->request->getPathInfo();
 
-        $this->seoPage = Seomanager::findOne(['route' => $route]);
+        if($this->cache) {
+
+            $cacheKey = 'seomanager.route' . $route;
+
+            $this->seoPage = Yii::$app->cache->get($cacheKey);
+
+            if($this->seoPage === false) {
+
+                $this->seoPage = Seomanager::findOne(['route' => $route]);
+
+                if ($this->seoPage === null) {
+                    // for routes that doesn´t add to the seomanger
+                    $cacheKey = 'seomanager.route.notfound';
+                }
+
+                Yii::$app->cache->set($cacheKey, $this->seoPage, 300);
+            }
+
+        } else {
+            $this->seoPage = Seomanager::findOne(['route' => $route]);
+        }
 
         if ($this->seoPage !== null) {
+
+            Yii::$app->seomanager->seoPage = $this->seoPage;
+
             return true;
         }
+
         return false;
     }
 
@@ -63,11 +86,12 @@ class SeomanagerHelper
 
     private function _setCanonical($href)
     {
-        Yii::$app->view->registerLinkTag(['rel' => 'canonical', 'href' => $href]);
+        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => $href]);
     }
 
     private function _setKeyWords($keywords)
     {
         Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $keywords], 'keywords');
     }
+
 }

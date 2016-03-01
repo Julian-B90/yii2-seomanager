@@ -19,6 +19,19 @@ use Yii;
  */
 class Seomanager extends \yii\db\ActiveRecord
 {
+
+    /**
+     * $position the position for the data content
+     * @var integer
+     */
+    public $position;
+
+    /**
+     * $content the content for a route
+     * @var string
+     */
+    public $content;
+
     /**
      * @inheritdoc
      */
@@ -33,9 +46,10 @@ class Seomanager extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['updated', 'created'], 'integer'],
+            [['updated', 'created', 'position'], 'integer'],
             [['created'], 'required'],
-            [['route', 'title', 'keywords', 'description', 'canonical', 'data'], 'string', 'max' => 255]
+            [['route', 'title', 'keywords', 'description', 'canonical'], 'string', 'max' => 255],
+            [['data'], 'safe'],
         ];
     }
 
@@ -51,6 +65,7 @@ class Seomanager extends \yii\db\ActiveRecord
             'keywords' => 'Keywords',
             'description' => 'Description',
             'canonical' => 'Canonical',
+            'position' => 'Position',
             'data' => 'Data',
             'updated' => 'Updated',
             'created' => 'Created',

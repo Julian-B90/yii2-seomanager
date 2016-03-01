@@ -67,10 +67,19 @@ class SeomanagerController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 
-            $model->created = time();
+            if ($model->validate()) {
 
-            if($model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                $model->created = time();
+
+                $model->data = json_encode([
+                    'content' => $model->content,
+                    'position' => $model->position
+                ]);
+
+                if ($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+
             }
 
         } else {

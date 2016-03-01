@@ -40,7 +40,17 @@ yii.bat migrate/up --migrationPath=@vendor/julian-b90/yii2-seomanager/migrations
 Usage
 -----
 
-Ad to modules 
+Overrite Controller
+```php
+use julianb90\seomanager\component\Controller;
+
+class SiteController extends Controller
+{
+
+}
+```
+
+Ad to modules
 ```php
     'modules' => [
         'seomanager' => [
