@@ -23,18 +23,10 @@ class Module extends \yii\base\Module
      */
     public $cache = false;
 
-    protected $seoPage;
+    public $seoPage;
 
     public function init()
     {
         parent::init();
-    }
-
-    public function getContent() {
-
-        if($this->seoPage !== null) {
-            return $this->seoPage->content;
-        }
-
     }
 }

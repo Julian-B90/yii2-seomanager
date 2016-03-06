@@ -46,10 +46,11 @@ class Seomanager extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['route'], 'required'],
             [['updated', 'created', 'position'], 'integer'],
             [['created'], 'required'],
             [['route', 'title', 'keywords', 'description', 'canonical'], 'string', 'max' => 255],
-            [['data'], 'safe'],
+            [['data', 'content'], 'safe'],
         ];
     }
 

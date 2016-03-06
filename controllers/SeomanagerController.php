@@ -67,26 +67,22 @@ class SeomanagerController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 
-            if ($model->validate()) {
+            $model->created = time();
 
-                $model->created = time();
+            $model->data = json_encode([
+                'content' => $model->content,
+                'position' => $model->position
+            ]);
 
-                $model->data = json_encode([
-                    'content' => $model->content,
-                    'position' => $model->position
-                ]);
-
-                if ($model->save()) {
-                    return $this->redirect(['view', 'id' => $model->id]);
-                }
-
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
             }
 
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
         }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -99,9 +95,19 @@ class SeomanagerController extends Controller
     {
         $model = $this->findModel($id);
 
+        $data = json_decode($model->data, true);
+
+        $model->content = (isset($data['content'])) ? $data['content'] : '';
+        $model->position = (isset($data['position'])) ? $data['position'] : '';
+
         if ($model->load(Yii::$app->request->post())) {
 
             $model->updated = time();
+
+            $model->data = json_encode([
+                'content' => $model->content,
+                'position' => $model->position
+            ]);
 
             if($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);

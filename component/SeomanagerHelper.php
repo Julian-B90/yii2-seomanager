@@ -42,7 +42,10 @@ class SeomanagerHelper
     {
         $route = Yii::$app->request->getPathInfo();
 
-        if($this->cache) {
+        /** @var Module $module */
+        $module = Yii::$app->getModule('seomanager');
+
+        if($module->cache) {
 
             $cacheKey = 'seomanager.route' . $route;
 
@@ -66,7 +69,7 @@ class SeomanagerHelper
 
         if ($this->seoPage !== null) {
 
-            Yii::$app->seomanager->seoPage = $this->seoPage;
+            $module->seoPage = $this->seoPage;
 
             return true;
         }
@@ -86,12 +89,31 @@ class SeomanagerHelper
 
     private function _setCanonical($href)
     {
-        $this->view->registerLinkTag(['rel' => 'canonical', 'href' => $href]);
+        Yii::$app->view->registerLinkTag(['rel' => 'canonical', 'href' => $href]);
     }
 
     private function _setKeyWords($keywords)
     {
         Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $keywords], 'keywords');
+    }
+
+    /**
+     * @param integer $position
+     * @return mixed
+     */
+    public function getContent($position) {
+
+        if($this->_checkRoute()) {
+
+            if($this->seoPage !== null) {
+
+                $data = json_decode($this->seoPage->data, true);
+
+                if (isset($data['content'])) {
+                    return $data['content'];
+                }
+            }
+        }
     }
 
 }
