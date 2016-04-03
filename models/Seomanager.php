@@ -49,6 +49,7 @@ class Seomanager extends \yii\db\ActiveRecord
             [['route'], 'required'],
             [['updated', 'created', 'position'], 'integer'],
             [['created'], 'required'],
+            [['route'], 'unique'],
             [['route', 'title', 'keywords', 'description', 'canonical'], 'string', 'max' => 255],
             [['data', 'content'], 'safe'],
         ];
