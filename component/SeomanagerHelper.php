@@ -98,14 +98,13 @@ class SeomanagerHelper
     }
 
     /**
-     * @param integer $position
      * @return mixed
      */
-    public function getContent($position) {
+    public function getContent() {
 
         if($this->_checkRoute()) {
 
-            if($this->seoPage !== null) {
+            if($this->seoPage !== null && !empty($this->seoPage->data)) {
 
                 $data = json_decode($this->seoPage->data, true);
 
@@ -114,6 +113,8 @@ class SeomanagerHelper
                 }
             }
         }
+
+        return null;
     }
 
 }
