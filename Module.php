@@ -29,4 +29,12 @@ class Module extends \yii\base\Module
     {
         parent::init();
     }
+
+    /**
+     * @return string|null get the content from the route
+     */
+    public function getContent() {
+        $seo = new SeomanagerHelper();
+        return $seo->getContent();
+    }
 }

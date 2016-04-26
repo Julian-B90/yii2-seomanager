@@ -24,7 +24,7 @@ class Seomanager extends \yii\db\ActiveRecord
      * $position the position for the data content
      * @var integer
      */
-    public $position;
+    public $position = 1;
 
     /**
      * $content the content for a route

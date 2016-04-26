@@ -26,8 +26,6 @@ $this->registerJs('', '
 
     <?= $form->field($model, 'canonical')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'position')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'content')->textarea(['maxlength' => true]) ?>
 
     <div class="form-group">

@@ -60,3 +60,22 @@ Ad to modules
 ```
 
 for example http://localhost.local/seomanager/seomanager/index.html
+
+
+### content
+
+To get content to every page you can use in the seomanger the content field.
+To print out the content you must you this in your view.
+
+```php
+<?php
+/** @var Module $module */
+$module = Yii::$app->getModule('seomanager');
+$conten = $module->getContent();
+
+if ($conten !== null): ?>
+    <div class="container">
+        <?= $conten; ?>
+    </div>
+<?php endif; ?>
+```
