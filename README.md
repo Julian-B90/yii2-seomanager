@@ -40,7 +40,17 @@ yii.bat migrate/up --migrationPath=@vendor/julian-b90/yii2-seomanager/migrations
 Usage
 -----
 
-Ad to modules 
+Overrite Controller
+```php
+use julianb90\seomanager\component\Controller;
+
+class SiteController extends Controller
+{
+
+}
+```
+
+Ad to modules
 ```php
     'modules' => [
         'seomanager' => [
@@ -50,3 +60,22 @@ Ad to modules
 ```
 
 for example http://localhost.local/seomanager/seomanager/index.html
+
+
+### content
+
+To get content to every page you can use in the seomanger the content field.
+To print out the content you must you this in your view.
+
+```php
+<?php
+/** @var Module $module */
+$module = Yii::$app->getModule('seomanager');
+$conten = $module->getContent();
+
+if ($conten !== null): ?>
+    <div class="container">
+        <?= $conten; ?>
+    </div>
+<?php endif; ?>
+```
