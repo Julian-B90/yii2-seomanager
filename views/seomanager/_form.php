@@ -6,6 +6,10 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Seo */
 /* @var $form yii\widgets\ActiveForm */
+
+$this->registerJs('', '
+    $();
+');
 ?>
 
 <div class="seo-form">
@@ -22,7 +26,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'canonical')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'content')->textarea(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
