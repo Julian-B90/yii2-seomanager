@@ -1,6 +1,12 @@
 Yii 2 - Seomanager
 ==========================
 
+0.0.6
+----------------------
+
+- New #8 Add a WYSIWYG Editor (CKEditor) and clear cache by route
+
+
 0.0.5
 -----------------------
 
