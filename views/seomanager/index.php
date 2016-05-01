@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'created:datetime',
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {clearCache} {delete}',
+                'template' => $this->context->module->cache ? '{view} {update} {clearCache} {delete}' : '{view} {update} {delete}',
                 'buttons' => [
                     'clearCache' => function($url, $model, $key) {
                         return Html::a('', ['seomanager/clear-cache', 'id' => $model->id], [

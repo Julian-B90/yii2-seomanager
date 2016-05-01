@@ -31,7 +31,7 @@ $this->registerJs('CKEDITOR.replace( "seomanager-content" );');
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 
-        <?php if (!$model->isNewRecord): ?>
+        <?php if (!$model->isNewRecord && $this->context->module->cache): ?>
 
             <?= Html::a('<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Clear Cache', ['seomanager/clear-cache', 'id' => $model->id], [
                 'class' => 'btn btn-success',
