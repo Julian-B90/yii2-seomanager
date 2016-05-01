@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\modules\orbitstation\models\search\SeoSearch */
+/* @var $searchModel julianb90\seomanager\models\search\SeomanagerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Übersicht';
@@ -28,7 +28,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'description',
             'canonical',
             'created:datetime',
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} {update} {clearCache} {delete}',
+                'buttons' => [
+                    'clearCache' => function($url, $model, $key) {
+                        return Html::a('', ['seomanager/clear-cache', 'id' => $model->id], [
+                            'class' => 'glyphicon glyphicon-flash',
+                            'title' => 'clear cache'
+                        ]);
+                    }
+                ],
+            ],
         ],
     ]); ?>
 

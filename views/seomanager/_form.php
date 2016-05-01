@@ -2,14 +2,14 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use julianb90\seomanager\assets\CKEditorAsset;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Seo */
+/* @var $model julianb90\seomanager\models\Seomanager */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->registerJs('', '
-    $();
-');
+CKEditorAsset::register($this);
+$this->registerJs('CKEDITOR.replace( "seomanager-content" );');
 ?>
 
 <div class="seo-form">
@@ -30,6 +30,17 @@ $this->registerJs('', '
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+
+        <?php if (!$model->isNewRecord): ?>
+
+            <?= Html::a('<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Clear Cache', ['seomanager/clear-cache', 'id' => $model->id], [
+                'class' => 'btn btn-success',
+                'title' => 'clear cache',
+                'arial-label' => 'Left Align'
+            ]); ?>
+
+        <?php endif ?>
+
     </div>
 
     <?php ActiveForm::end(); ?>
