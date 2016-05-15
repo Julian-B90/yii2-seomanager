@@ -6,6 +6,8 @@
 
 namespace julianb90\seomanager;
 
+use julianb90\seomanager\component\SeomanagerHelper;
+
 class Module extends \yii\base\Module
 {
 

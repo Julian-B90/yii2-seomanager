@@ -148,4 +148,18 @@ class SeomanagerController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    public function actionClearCache($id) {
+
+        $model = Seomanager::findOne($id);
+
+        if ($model !== null) {
+
+            $key = 'seomanager.route' . $model->route;
+
+            Yii::$app->cache->delete($key);
+        }
+
+        return $this->redirect(['update', 'id' => $id]);
+    }
 }
