@@ -7,7 +7,7 @@ class m151210_135246_seomanager extends Migration
 
     public $tableName = 'seomanager';
 
-    public function up()
+    public function saveUp()
     {
         $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
@@ -24,7 +24,7 @@ class m151210_135246_seomanager extends Migration
         $this->createIndex('seomanager_idx_route', $this->tableName, 'route');
     }
 
-    public function down()
+    public function saveDown()
     {
         $this->dropTable($this->tableName);
     }
