@@ -1,3 +1,5 @@
+# This repo is archived
+
 Seo Manager
 ===========
 Seo Manager for every Site
